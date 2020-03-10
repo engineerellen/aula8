@@ -6,7 +6,48 @@ namespace Aula5
     {
         static void Main(string[] args)
         {
-            GerenciaDiretorio();
+            Exercicio1();
+        }
+        /*Fazer um programa que crie um arquivo se ele não existir chamado AulaFapen.txt 
+         * e escreva o seguinte conteudo “Estamos utilizando a classe StreamWriter para escrever esse código!
+         */
+        static void Exercicio1()
+        {
+            string arquivo = @"C:\fapen\AulaFapen.txt";
+            try
+            {
+                if (File.Exists(arquivo))
+                {
+                    string linha;
+                    using (StreamReader reader = new StreamReader(arquivo))
+                    {
+                        linha = reader.ReadLine();
+                        Console.WriteLine(linha);
+                    }
+                }
+                else
+                {
+                    using (StreamWriter writer = new StreamWriter(arquivo))
+                    {
+                        writer.Write("Estamos utilizando a classe StreamWriter para escrever esse código! ");
+
+                    }
+                }
+
+            }
+            catch (FileNotFoundException ex)
+            {
+                throw ex;
+            }
+            catch (IOException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex1)
+            {
+                throw ex1;
+            }
+
         }
 
         static void GerenciaDiretorio()
@@ -26,7 +67,7 @@ namespace Aula5
                 }
 
                 di.Delete();
-               Console.WriteLine("Diretório Excluiído com sucesso!.");
+                Console.WriteLine("Diretório Excluiído com sucesso!.");
             }
             catch (Exception e)
             {
