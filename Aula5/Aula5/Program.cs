@@ -6,12 +6,10 @@ namespace Aula5
     {
         static void Main(string[] args)
         {
-            Exercicio1();
+            Exercicio12();
         }
-        /*Fazer um programa que crie um arquivo se ele não existir chamado AulaFapen.txt 
-         * e escreva o seguinte conteudo “Estamos utilizando a classe StreamWriter para escrever esse código!
-         */
-        static void Exercicio1()
+      
+        static void Exercicio12()
         {
             string arquivo = @"C:\fapen\AulaFapen.txt";
             try
