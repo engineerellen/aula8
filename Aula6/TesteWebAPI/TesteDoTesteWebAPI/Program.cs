@@ -27,7 +27,7 @@ namespace TesteDoTesteWebAPI
         /*Parametro do post é encapsulada . Usamos os mesmos dados existentes no objeto serializado*/
         private static void Post()
         {
-            var request = (HttpWebRequest)WebRequest.Create("https://localhost:44363/fapen/login/acessar");
+            var request = (HttpWebRequest)WebRequest.Create("http://localhost:8081/fapen/login/acessar");
             var postData = "{ Id: 1, login: 'ellen', senha: 123 }";
             var data = Encoding.ASCII.GetBytes(postData);
             request.Method = "POST";
